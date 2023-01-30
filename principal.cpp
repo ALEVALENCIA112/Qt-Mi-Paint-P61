@@ -155,6 +155,8 @@ void Principal::on_actionCircunferencias_checkableChanged(bool activo)
         mPainter->setPen(pincel);
         mPainter->drawEllipse(mInicial.x(),mInicial.y(),mFinal.x()-mInicial.x(),mFinal.y()-mInicial.y());
         update();
+
+        mInicial = mFinal;
     }
 }
 
@@ -169,6 +171,8 @@ void Principal::on_actionLineas_checkableChanged(bool activo)
         QLine line(mInicial.x(),mInicial.y(),mFinal.x(),mFinal.y());
         mPainter->drawLine(line);
         update();
+
+        mInicial = mFinal;
     }
 }
 
@@ -205,6 +209,17 @@ void Principal::on_actionRectangulos_checkableChanged(bool activo)
             mPainter->drawRect(mInicial.x(),mInicial.y(),mFinal.x()-mInicial.x(),mFinal.y()-mInicial.y());
         }
         update();
+
+        mInicial = mFinal;
     }
 }
 
+/*La clave para evitar que Circulos, rectangulos y lineas se grafiquen
+  al mismo tiempo es (mInicial = mFinal)al final de cada slot de checkableChanged()
+
+¡¡¡¡¡¡IMPORTANTE!!!!!!
+    Libre predomina sobre Circunferencias, Lineas y Rectangulos
+    Circunferencias predomina sobre Lineas y Rectangulos
+    Lineas predomina sobre Rectangulos
+    Recatngulos se grafican únicamente si esta se encuentra marcada
+*/
