@@ -63,13 +63,6 @@ void Principal::mouseMoveEvent(QMouseEvent *event)
     // Capturar el punto a donde se mueve el mouse
     mFinal = event->pos();
 
-    if(ui->actionCircunferencias->isChecked()==true){
-        on_actionCircunferencias_checkableChanged(true);
-    }
-    if(ui->actionLineas->isChecked()==true){
-        on_actionLineas_checkableChanged(true);
-    }
-
     /*La acción "Libre" bloquea las demás acciones, mientras que
       si las demás acciones están habilitadas a excepción de "Libre"
       todas se graficarán de forma simultanea*/
@@ -77,9 +70,7 @@ void Principal::mouseMoveEvent(QMouseEvent *event)
         on_actionLibre_checkableChanged(true);
     }
 
-    if(ui->actionRectangulos->isChecked()==true){
-        on_actionRectangulos_checkableChanged(true);
-    }
+
 
 }
 
@@ -89,6 +80,16 @@ void Principal::mouseReleaseEvent(QMouseEvent *event)
     mPuedeDibujar = false;
     // Aceptar el vento
     event->accept();
+
+    if(ui->actionCircunferencias->isChecked()==true){
+        on_actionCircunferencias_checkableChanged(true);
+    }
+    if(ui->actionLineas->isChecked()==true){
+        on_actionLineas_checkableChanged(true);
+    }
+    if(ui->actionRectangulos->isChecked()==true){
+        on_actionRectangulos_checkableChanged(true);
+    }
 
 }
 
