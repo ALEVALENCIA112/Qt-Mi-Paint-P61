@@ -48,7 +48,7 @@
     </property>
     <addaction name="actionLineas"/>
     <addaction name="actionLibre"/>
-    <addaction name="actionRect_nculos"/>
+    <addaction name="actionRectangulos"/>
     <addaction name="actionCircunferencias"/>
    </widget>
    <addaction name="menuArchivo"/>
@@ -97,6 +97,9 @@
    </property>
   </action>
   <action name="actionLineas">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>Lineas</string>
    </property>
@@ -109,12 +112,18 @@
     <string>Libre</string>
    </property>
   </action>
-  <action name="actionRect_nculos">
+  <action name="actionRectangulos">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>Rectánculos</string>
    </property>
   </action>
   <action name="actionCircunferencias">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>Circunferencias</string>
    </property>

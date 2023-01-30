@@ -42,6 +42,16 @@ private slots:
 
     void on_actionGuardar_triggered();
 
+    //EN la UI se debe marcar la casilla (checkable) de cada acción
+
+    void on_actionCircunferencias_checkableChanged(bool activo);
+
+    void on_actionLibre_checkableChanged(bool activo);
+
+    void on_actionLineas_checkableChanged(bool activo);
+
+    void on_actionRectangulos_checkableChanged(bool activo);
+
 private:
     Ui::Principal *ui;
     QImage *mImagen;        // Imagen sobre la que se va a dibujar
@@ -52,5 +62,6 @@ private:
     int mAncho;             // Define el ancho del pincel
     QColor mColor;          // Define el color del pincel
     int mNumLineas;         // Cuenta el número de líneas
+
 };
 #endif // PRINCIPAL_H
