@@ -175,7 +175,6 @@ void Principal::on_actionLineas_checkableChanged(bool activo)
 
 void Principal::on_actionLibre_checkableChanged(bool activo)
 {
-    // Capturar el punto donde se suelta el mouse
     if(activo==true){
         // Crear un pincel y establecer atributos
         QPen pincel;
